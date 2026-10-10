@@ -1,22 +1,13 @@
-# Per4an — Website Redesign
+# Per4an — Premium Editorial Redesign
 
-A responsive Indonesian editorial homepage for Per4an.
+A responsive English-language editorial site for Indonesian destinations, food, culture, craft, and thoughtful travel. The build script generates 40 standalone article pages, targeting 1,200–1,500 words each, plus the homepage, information pages, sitemap, and robots.txt.
 
-## Deploy on Cloudflare Pages (GitHub integration)
+## Cloudflare Pages settings
+- Repository: `yusufads2026/per4an`
+- Production branch: `main`
+- Build command: `npm run build`
+- Build output directory: `dist`
 
-1. Open https://dash.cloudflare.com/ and sign in.
-2. Go to **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
-3. Select the GitHub repository **yusufads2026/per4an**.
-4. Set the production branch to `main`.
-5. This is a static HTML site: leave the build command empty and set the build output directory to `/` if accepted by the dashboard. If the dashboard rejects the repository root as an output directory, create a `public` folder and move `index.html` into it, then set the output directory to `public`.
-6. Click **Save and Deploy**. Cloudflare will provide the actual `*.pages.dev` URL after the deployment succeeds.
+The site has no runtime framework or external package dependencies. Once a Cloudflare Pages project is connected to this GitHub repository, commits to `main` can trigger builds automatically. Cloudflare supplies the actual `*.pages.dev` address after a successful deployment; it cannot be pre-created from GitHub alone.
 
-## Domain later
-
-When you own/configure `per4an.com`, open the Pages project → **Custom domains** → **Set up a custom domain** and follow Cloudflare's DNS instructions.
-
-## Notes
-
-- The redesign is a fresh homepage; old Per4an article links are linked as references and may change.
-- Images currently use remote Unsplash image URLs.
-- No domain has been configured by this repository.
+Editorial note: These are general travel and culture guides. Verify current official/local details before publishing time-sensitive claims. Images load from Unsplash.

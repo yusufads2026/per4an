@@ -1,0 +1,22 @@
+name: Build and validate Per4an
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build static site and validate all article lengths
+        run: npm run build
+      - name: Verify homepage and sitemap
+        run: |
+          test -f dist/index.html
+          test -f dist/sitemap.xml
+          test "$(find dist/articles -maxdepth 1 -name '*.html' | wc -l)" -eq 40
